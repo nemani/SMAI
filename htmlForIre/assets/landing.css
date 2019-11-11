@@ -1,0 +1,265 @@
+body {
+    background: #12141a url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%232f323c' fill-opacity='0.10'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: white;
+    padding-top: 5px;
+    border-top: 3px solid #E73561;
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1200px;
+        max-width: 100%;
+    }
+}
+
+header {
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+
+header #logo {
+    width: 200px;
+    position: relative;
+    left: -20px;
+}
+
+header ul {
+    text-align: right;
+}
+
+.hand-written {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 36px;
+    color: #FFE567;
+}
+
+.description {
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 35px;
+}
+
+a {
+    color: #f58b9c;
+}
+
+a:hover {
+    transition: color 0.3s ease;
+    color: #a55359;
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+footer {
+    line-height: 60px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+footer .fa-heartbeat {
+    margin-right: 10px;
+}
+
+.topic {
+    padding-top: 15px;
+}
+
+header ul li {
+    display: inline;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0 10px;
+}
+
+header ul li a {
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    transition: color 0.3s ease;
+    color: #f58b9c;
+    text-decoration: none;
+}
+
+header ul li a.link-github {
+    transition: background-color 0.5s linear;
+    padding: 8px 10px;
+    border: 1px solid #c3e6cb;
+}
+
+header ul li a.link-github:hover {
+    background: #c3e6cb;
+    color: black;
+}
+
+header ul li a.link-github svg.fa-github {
+    margin-right: 5px;
+}
+
+.btn svg {
+    margin-right: 10px;
+}
+
+#btn-get-started {
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 1px solid #c3e6cb;
+    border-radius: 0;
+    font-size: 18px;
+    background: white;
+    color: black;
+}
+
+#btn-get-started:hover {
+    background: transparent;
+    color: white;
+}
+
+code {
+    border: 1px solid #343631;
+    font-size: 17px !important;
+}
+
+#bench-accordion .card{
+    background-color: #292b36 !important;
+}
+
+#bench-accordion .btn-link {
+    color: white;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 500px) {
+    #logo {
+        margin: auto;
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    header ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    header ul li {
+        margin: 0; /* To remove default bottom margin */
+        padding: 0 10px;
+        line-height: 50px;
+    }
+
+    header ul li a.link-github svg.fa-github {
+        margin-right: 0;
+    }
+
+    header ul li a.link-github span {
+        display: none;
+    }
+
+    .description {
+        font-size: 19px;
+    }
+
+    .hand-written {
+        font-size: 28px;
+    }
+
+    .hand-written, .description {
+        padding: 20px;
+    }
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    code {
+        padding-left: 15px !important;
+        font-size: 14px !important;
+    }
+
+    #canvasMain {
+
+    }
+
+    header {
+        padding-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .row-benchmarks > div {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    header ul li a.link-github span {
+        display: inline;
+    }
+
+    header ul li a.link-github svg.fa-github {
+        margin-right: 5px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #btn-get-started {
+        margin-top: -20px;
+    }
+
+    .row-benchmarks > div:nth-last-child(2) {
+        margin-bottom: 0;
+    }
+
+    .row-benchmarks > div {
+        margin-bottom: 50px;
+    }
+}
+
+.hljs {
+    background: rgba(44, 47, 56, 0.1);
+    /* opacity: 0.1; */
+}
+
+.col-benchmarks, .col-benchmarks-zero {
+    padding: 10px 20px;
+}
+
+.col-benchmarks {
+    background: rgba(44, 47, 56, 0.1);
+    border: 1px solid #343631;
+}
+
+.row-benchmarks > div:last-child {
+    margin-bottom: 0;
+}
+
+.row-benchmarks h4 {
+    text-align: left;
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.row-benchmarks h4 .fa-info-circle {
+    float: right;
+}
+
+.hand-written svg {
+    margin-right: 18px;
+}
+
+.icon-more-info {
+    cursor: pointer;
+}
+
+.icon-more-info:hover {
+    opacity: 0.6;
+}
