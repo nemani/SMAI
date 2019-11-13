@@ -28,19 +28,7 @@ class LanguageModel(object):
     def start_prompt(self):
         self.show_completions = False
         f = to_filter(Condition(lambda: self.show_completions))
-        prompt('>>> ', multiline=True, completer=MyCustomCompleter(self))
-
-
-# @kb.add('c-space')
-# def _(event):
-#     " Initialize autocompletion, or select the next completion. "
-#     buff = event.app.current_buffer
-#     print(buff)
-#     if buff.complete_state:
-#         buff.complete_next()
-#     else:
-#         buff.start_completion(select_first=False)
-
+        prompt('>>> ', multiline=True, completer=MyCustomCompleter(self), complete_while_typing=True)
 
 class MyCustomCompleter(Completer):
     def __init__(self, LM):

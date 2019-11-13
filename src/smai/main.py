@@ -75,6 +75,21 @@ def parse_args(args):
         help="Number of Epochs to train for",
         # action="store_const",
     )
+    parser.add_argument(
+        "--ngrams",
+        required=('train' in sys.argv and 'Ngram' in sys.argv),
+        type=int,
+        help="Ngram",
+        # action="store_const",
+    )
+    parser.add_argument(
+        '-b',
+        "--beam",
+        dest='beam',
+        default=False,
+        help="beam search for ngram model",
+        action="store_true",
+    )
 
     return parser.parse_args(args)
 
@@ -103,7 +118,7 @@ def main(args):
             mode=args.mode, slug=args.slug, base_dir=args.base_dir)
     else:
         LM = NgramLanguageModel(
-            mode=args.mode, slug=args.slug, base_dir=args.base_dir)
+            mode=args.mode, slug=args.slug, base_dir=args.base_dir, n=args.ngrams, use_beam=args.beam)
 
     if args.mode == 'train':
         with open(args.file, 'r') as file:

@@ -15,8 +15,7 @@ import numpy as np
 import pprint
 
 from .language_model import LanguageModel
-from .utils import Beam, flatten, sliding_window, tokenize
-
+from .utils import Beam, flatten, sliding_window, tokenize, eprint
 
 class NgramLanguageModel(LanguageModel):
     """
@@ -141,7 +140,7 @@ class NgramLanguageModel(LanguageModel):
             # print("Actual Token : ", tokens)
             for last_n in range(self.n_gram-1, 0, -1):
                 token = tuple(tokens[-last_n:])
-                print(token)
+                # print(token)
                 if token in self.grams_occurence.keys():
                     return self.normalize(self.grams_occurence[tuple(token)])
                 else:
@@ -183,12 +182,15 @@ class NgramLanguageModel(LanguageModel):
         else:
             # we take at max 5 word for our case
             while counter <= 5:
-                beam_list.add((k, v))
-                k = np.random.choice(
-                    list(distribution.keys()), n, list(distribution.values()))
-                v = distribution[k]
+                k = np.random.choice(list(distribution.keys()), n, list(distribution.values()))
+        
+                for each in list(k):
+                    v = distribution[each]
+                    beam_list.add((each, v))
+
                 if len(beam_list) == self.beam_width:
                     break
+
                 counter = counter + 1
             #print("Beam List : ", list(beam_list))
 
@@ -208,6 +210,7 @@ class NgramLanguageModel(LanguageModel):
         """
         prev_beam = Beam(beam_width)  # Creating an initial beam(i.e heap)
         prev_beam.add(1.0, False, token)  # Add a starting value to the beam
+        
         while True:
             curr_beam = Beam(beam_width)
             for (prob, complete, prefix_token) in prev_beam:
@@ -238,26 +241,36 @@ class NgramLanguageModel(LanguageModel):
         """
         tokens_size = self.n_gram - 1
         tokens = []
-
+        
         if seed_text:
-            tokens_size = len(tokens)
+            eprint("Conditional Generation on: {}".format(seed_text))
             tokens = seed_text.lower().split(' ')
-
+            tokens_size = len(tokens)            
+        else:
+            eprint("UnConditional Generation")
+        
         if self.beam_flag:
             #print("Tokens before Beam : ", tokens)
             tokens.extend(self.beam_search(tokens, self.beam_width)[0])
             #print("Tokens After beam : ", tokens)
             del tokens[1:tokens_size]  # Deleting 2nd word since they repeat
         else:
+            flag = False
             while True:
                 choices = self.sample_n_choices(self.next_word_probability(tokens), n=n)
-                choice = choices[0][0]
-                next_word = choice
-                if next_word is None:
+                for i, choice in enumerate(choices):
+                    eprint(f"{i} is {choice}")
+                    next_word = choice[0]
+                    if next_word is None:
+                        flag = True
+                        break
+                    tokens.append(next_word)
+                if flag:
                     break
-                tokens.append(next_word)
 
-        return tokens
+        choices = tokens[tokens_size:]
+        eprint(choices)
+        return choices
 
     def n_gram_probability(self, ngram_word, next_word_in_ngram):
         """

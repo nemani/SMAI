@@ -12,7 +12,7 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 
 from .language_model import LanguageModel
-
+from .utils import eprint
 
 class LstmLanguageModel(LanguageModel):
 
@@ -160,11 +160,11 @@ class LstmLanguageModel(LanguageModel):
 		wi = self.tokenizer.word_index
 
 		if not seed_text:
-			print("Unconditional Text Generation: 3 Random Words to start with")
+			# eprint("Unconditional Text Generation: 3 Random Words to start with")
 			word_options = random.sample(wi.keys(), n)
 			return word_options
 
-		print("Conditional Text Generation: on {}".format(seed_text))
+		eprint("Conditional Text Generation On: {}".format(seed_text))
 
 		seed_token_list = self.tokenizer.texts_to_sequences([seed_text])[0]
 

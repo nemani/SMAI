@@ -1,6 +1,12 @@
 import heapq
 import string
 import re
+import sys
+
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
 
 def tokenize(text):
     """
@@ -17,8 +23,10 @@ def tokenize(text):
     list
             Tokenized string in a list form
     """
-
     text = text.replace('--', ' ')
+    text = text.replace('  ', ' ')
+    text = text.replace('!!', '!')
+
     text = clean_regex(text)
     #punctuation_table = dict((ord(char), None) for char in string.punctuation)
     #text = text.translate(punctuation_table)
@@ -37,13 +45,14 @@ def tokenize(text):
         r"(www\.)(\s)*((\w|\s)+\.)*([\w\-\s]+\/)*([\w\-]+)((\?)?[\w\s]*=\s*[\w\%&]*)*", r"", text)
 
     if text[-1] in ".,!?":
-        text = text[:-1]+" "+text[-1]
+        text = text[:-1] + " " + text[-1]
+    
     # pad sentence punctuation chars with whitespace
     text = re.sub('([^0-9])([.,!?"$\'])([^0-9])', r'\1 \2 \3', text)
+    
     tokens = text.split()
-
-#tokens = [word for word in tokens if word.isalpha()]
-    tokens = [word.lower() for word in tokens]
+    
+    tokens = [word.lower() for word in tokens if word is not ""]
     return tokens
 
 
@@ -139,54 +148,54 @@ def sliding_window(sequence, window):
 
 
 class Beam(object):
-	"""
-	A class to represent a Beam data structure
+    """
+    A class to represent a Beam data structure
 
-	...
-	Attributes
-	----------
+    ...
+    Attributes
+    ----------
 
-	heap: list
-		list containing probability, token and setence completetion boolean information
+    heap: list
+            list containing probability, token and setence completetion boolean information
 
-	beam_width: int
-		size of beam
-	"""
-	#For comparison of prefixes, the tuple (prefix_probability, complete_sentence) is used.
-	#This is so that if two prefixes have equal probabilities then a complete sentence is preferred over an incomplete one since (0.5, False) < (0.5, True)
+    beam_width: int
+            size of beam
+    """
+    # For comparison of prefixes, the tuple (prefix_probability, complete_sentence) is used.
+    # This is so that if two prefixes have equal probabilities then a complete sentence is preferred over an incomplete one since (0.5, False) < (0.5, True)
 
-	def __init__(self, beam_width):
-		"""
-		Initiate the beam
+    def __init__(self, beam_width):
+        """
+        Initiate the beam
 
-		Parameters
-		----------
-		beam_width: int
-			size of beam
-		"""
-		self.heap = list()
-		self.beam_width = beam_width
+        Parameters
+        ----------
+        beam_width: int
+                size of beam
+        """
+        self.heap = list()
+        self.beam_width = beam_width
 
-	def add(self, prob, complete, prefix):
-		"""
-		Add item to the heap queue. Also pop from heap if beam size is greate than max defined
+    def add(self, prob, complete, prefix):
+        """
+        Add item to the heap queue. Also pop from heap if beam size is greate than max defined
 
-		Parameters
-		----------
-		prob: float
-			Probability value of current sentence in the beam
-		complete: boolean
-			if the sentence is completed or not
-		prefix:
-			last n-1 token in the current sentence
-		"""
+        Parameters
+        ----------
+        prob: float
+                Probability value of current sentence in the beam
+        complete: boolean
+                if the sentence is completed or not
+        prefix:
+                last n-1 token in the current sentence
+        """
 
-		heapq.heappush(self.heap, (prob, complete, prefix))
-		if len(self.heap) > self.beam_width:
-			heapq.heappop(self.heap)
+        heapq.heappush(self.heap, (prob, complete, prefix))
+        if len(self.heap) > self.beam_width:
+            heapq.heappop(self.heap)
 
-	def __iter__(self):
-		"""
-		Iterate over the heap structure
-		"""
-		return iter(self.heap)
+    def __iter__(self):
+        """
+        Iterate over the heap structure
+        """
+        return iter(self.heap)
