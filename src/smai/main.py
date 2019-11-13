@@ -58,16 +58,24 @@ def parse_args(args):
         '-f',
         "--file",
         required=('train' in sys.argv),
-        help="path to dir relative to current or absolute where we will save the models and the data given",
+        help="File to use for training",
         # action="store_const",
     )
     parser.add_argument(
         '-s',
         "--seed_text",
-        required=('train' in sys.argv),
-        help="path to dir relative to current or absolute where we will save the models and the data given",
+        required=False,
+        help="Seed Text to use for conditional generation",
         # action="store_const",
     )
+    parser.add_argument(
+        "--epochs",
+        required=('train' in sys.argv and 'LSTM' in sys.argv),
+        type=int,
+        help="Number of Epochs to train for",
+        # action="store_const",
+    )
+
     return parser.parse_args(args)
 
 
@@ -89,21 +97,27 @@ def main(args):
       args ([str]): command line parameter list
     """
     args = parse_args(args)
-    
+
     if args.type == "LSTM":
-      LM = LstmLanguageModel(mode=args.mode, slug=args.slug, base_dir=args.base_dir)
+        LM = LstmLanguageModel(
+            mode=args.mode, slug=args.slug, base_dir=args.base_dir)
     else:
-      LM = NgramLanguageModel(
-          mode=args.mode, slug=args.slug, base_dir=args.base_dir)
+        LM = NgramLanguageModel(
+            mode=args.mode, slug=args.slug, base_dir=args.base_dir)
+
     if args.mode == 'train':
-      with open(args.file, 'r') as file:
-        data = file.readlines()
-        LM.train(data)
-        LM.save_model()
-    
+        with open(args.file, 'r') as file:
+            data = file.readlines()
+
+            if args.type == "LSTM":
+              LM.train(data, epochs=args.epochs)
+            else:
+              LM.train(data)
+            LM.save_model()
+
     if args.mode == 'eval':
-      LM.load_model()
-      LM.gen
+        LM.load_model()
+        LM.start_prompt()
 
 
 def run():

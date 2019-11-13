@@ -153,8 +153,10 @@ class LstmLanguageModel(LanguageModel):
 			self.model = model_from_json(f.read())
 
 		self.model.load_weights(os.path.join(self.dir,'model_weights.h5'))
+		self.max_sequence_len = self.model.layers[0].output_shape[1] + 1
+    	
 
-	def generate_n_choices(self, n, seed_text=None):
+	def generate_n_choices(self, n=1, seed_text=None):
 		wi = self.tokenizer.word_index
 
 		if not seed_text:
@@ -178,7 +180,7 @@ class LstmLanguageModel(LanguageModel):
 			if wi[each] in top_n:
 				word_options.append(each)
 
-		return seed_text, word_options
+		return word_options
 
 	def generate_n_words(self, n, seed_text=None):
 		wi = self.tokenizer.word_index
