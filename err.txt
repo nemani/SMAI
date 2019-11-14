@@ -1,0 +1,140 @@
+2019-11-14 18:39:00.162911: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-11-14 18:39:00.186523: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2712000000 Hz
+2019-11-14 18:39:00.187315: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55dc8f626550 executing computations on platform Host. Devices:
+2019-11-14 18:39:00.187395: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+Using TensorFlow backend.
+Conditional Text Generation On: W
+Conditional Text Generation On: We
+Conditional Text Generation On: We 
+Conditional Text Generation On: We can 
+Conditional Text Generation On: We can n
+Conditional Text Generation On: We can no
+Conditional Text Generation On: We can now
+Conditional Text Generation On: We can now 
+Conditional Text Generation On: We can now w
+Conditional Text Generation On: We can now wr
+Conditional Text Generation On: We can now wri
+Conditional Text Generation On: We can now write
+Conditional Text Generation On: We can now write 
+Conditional Text Generation On: We can now write t
+Conditional Text Generation On: We can now write te
+Conditional Text Generation On: We can now write text
+Conditional Text Generation On: We can now write text 
+Conditional Text Generation On: We can now write text h
+Conditional Text Generation On: We can now write text he
+Conditional Text Generation On: We can now write text here
+Conditional Text Generation On: We can now write text here 
+Conditional Text Generation On: We can now write text here a
+Conditional Text Generation On: We can now write text here an
+Conditional Text Generation On: We can now write text here and
+Conditional Text Generation On: We can now write text here and 
+Conditional Text Generation On: We can now write text here and t
+Conditional Text Generation On: We can now write text here and th
+Conditional Text Generation On: We can now write text here and the 
+Conditional Text Generation On: We can now write text here and the c
+Conditional Text Generation On: We can now write text here and the co
+Conditional Text Generation On: We can now write text here and the code
+Conditional Text Generation On: We can now write text here and the code 
+Conditional Text Generation On: We can now write text here and the code w
+Conditional Text Generation On: We can now write text here and the code wi
+Conditional Text Generation On: We can now write text here and the code wil
+Conditional Text Generation On: We can now write text here and the code will
+Conditional Text Generation On: We can now write text here and the code will r
+Conditional Text Generation On: We can now write text here and the code will ru
+Conditional Text Generation On: We can now write text here and the code will run 
+Conditional Text Generation On: We can now write text here and the code will run t
+Conditional Text Generation On: We can now write text here and the code will run the
+Conditional Text Generation On: We can now write text here and the code will run the 
+Conditional Text Generation On: We can now write text here and the code will run the m
+Conditional Text Generation On: We can now write text here and the code will run the mod
+Conditional Text Generation On: We can now write text here and the code will run the model
+Conditional Text Generation On: We can now write text here and the code will run the model 
+Conditional Text Generation On: We can now write text here and the code will run the model a
+Conditional Text Generation On: We can now write text here and the code will run the model an
+Conditional Text Generation On: We can now write text here and the code will run the model and g
+Conditional Text Generation On: We can now write text here and the code will run the model and gi
+Conditional Text Generation On: We can now write text here and the code will run the model and giv
+Conditional Text Generation On: We can now write text here and the code will run the model and give
+Conditional Text Generation On: We can now write text here and the code will run the model and give 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me t
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a g
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a gr
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a gre
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a grea
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great t
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great te
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great tes
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testi
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testin
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing a
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing ar
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing are
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area f
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for m
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my 
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my m
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my mo
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my mode
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my model
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+T
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Th
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Thn
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Thnak
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Tha
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Thank
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Thanks
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Thanks!
+Conditional Text Generation On: We can now write text here and the code will run the model and give me a great testing area for my models!
+Thanks!
+
+Traceback (most recent call last):
+  File "/home/nemani/.pyenv/versions/3.7.4/bin/runSmai", line 11, in <module>
+    load_entry_point('SMAI==0.0.post0.dev12+gc73d4e1', 'console_scripts', 'runSmai')()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/SMAI-0.0.post0.dev12+gc73d4e1-py3.7.egg/smai/main.py", line 157, in run
+    main(sys.argv[1:])
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/SMAI-0.0.post0.dev12+gc73d4e1-py3.7.egg/smai/main.py", line 152, in main
+    LM.start_prompt()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/SMAI-0.0.post0.dev12+gc73d4e1-py3.7.egg/smai/language_model.py", line 31, in start_prompt
+    prompt('>>> ', multiline=True, completer=MyCustomCompleter(self), complete_while_typing=True)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py", line 845, in prompt
+    return session.prompt(*a, **kw)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py", line 738, in prompt
+    return run_sync()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py", line 727, in run_sync
+    return self.app.run(inputhook=self.inputhook, pre_run=pre_run2)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 709, in run
+    return run()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 683, in run
+    return f.result()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/eventloop/future.py", line 149, in result
+    raise self._exception
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/eventloop/coroutine.py", line 90, in step_next
+    new_f = coroutine.throw(exc)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 658, in _run_async2
+    result = yield f
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/eventloop/coroutine.py", line 92, in step_next
+    new_f = coroutine.send(f.result())
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 610, in _run_async
+    result = yield From(f)
+KeyboardInterrupt
