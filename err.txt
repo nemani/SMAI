@@ -1,0 +1,103 @@
+Using TensorFlow backend.
+Conditional Generation on: A
+0 is ('series', 0.007768268342122227)
+1 is ('lacking', 0.0019435232717981376)
+2 is ('dictionary', 0.0019435232717981376)
+0 is ('use', 1)
+0 is ('kindle', 1)
+0 is ('that', 1)
+0 is (None, 1)
+['series', 'lacking', 'dictionary', 'use', 'kindle', 'that']
+Conditional Generation on: A v
+0 is ('that', 1)
+0 is ('go', 1)
+0 is ('otherwise', 1)
+0 is ('angry', 1)
+0 is ('life', 1)
+0 is ('levels', 1)
+0 is ('that', 1)
+0 is ('child', 1)
+0 is ('or', 1)
+0 is ('the', 1)
+0 is ('there', 1)
+0 is ('and', 3)
+1 is (':', 1)
+2 is ('less', 1)
+0 is ('bajas', 1)
+0 is ('favorite', 1)
+0 is ('like', 1)
+0 is ('yet', 1)
+0 is ('jealous', 1)
+0 is ('buy', 1)
+0 is ('away', 1)
+0 is ('the', 1)
+0 is ('of', 2)
+0 is (None, 1)
+['that', 'go', 'otherwise', 'angry', 'life', 'levels', 'that', 'child', 'or', 'the', 'there', 'and', ':', 'less', 'bajas', 'favorite', 'like', 'yet', 'jealous', 'buy', 'away', 'the', 'of']
+Conditional Generation on: A ve
+0 is ('!', 1)
+0 is ('page', 1)
+0 is ('5', 1)
+1 is ('3', 1)
+2 is ('3g', 1)
+0 is ('eg', 1)
+0 is (None, 1)
+['!', 'page', '5', '3', '3g', 'eg']
+Conditional Generation on: A ver
+0 is (None, 1)
+[]
+Conditional Generation on: A very
+0 is ('good', 0.09966148944643567)
+1 is ('poor', 0.09966148944643567)
+0 is ('it', 1)
+0 is ('!', 1)
+0 is ('was', 1)
+0 is ('wonderful', 1)
+0 is ('!', 1)
+0 is ('an', 1)
+0 is ('dictionary', 1)
+0 is ('kindle', 1)
+0 is (None, 1)
+['good', 'poor', 'it', '!', 'was', 'wonderful', '!', 'an', 'dictionary', 'kindle']
+Conditional Generation on: A very good 
+0 is ('idea', 0.2475272007912957)
+0 is ('.', 0.2475272007912957)
+0 is (None, 0.2475272007912957)
+['idea', '.']
+Conditional Generation on: A very good idea 
+0 is ('.', 0.2475272007912957)
+0 is (None, 0.2475272007912957)
+['.']
+Conditional Generation on: A very good idea . 
+0 is (None, 0.2475272007912957)
+[]
+Traceback (most recent call last):
+  File "/home/nemani/.pyenv/versions/3.7.4/bin/runSmai", line 11, in <module>
+    load_entry_point('SMAI==0.0.post0.dev9+g8191c75.dirty', 'console_scripts', 'runSmai')()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/SMAI-0.0.post0.dev9+g8191c75.dirty-py3.7.egg/smai/main.py", line 140, in run
+    main(sys.argv[1:])
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/SMAI-0.0.post0.dev9+g8191c75.dirty-py3.7.egg/smai/main.py", line 135, in main
+    LM.start_prompt()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/SMAI-0.0.post0.dev9+g8191c75.dirty-py3.7.egg/smai/language_model.py", line 31, in start_prompt
+    prompt('>>> ', multiline=True, completer=MyCustomCompleter(self), complete_while_typing=True)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py", line 845, in prompt
+    return session.prompt(*a, **kw)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py", line 738, in prompt
+    return run_sync()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py", line 727, in run_sync
+    return self.app.run(inputhook=self.inputhook, pre_run=pre_run2)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 709, in run
+    return run()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 683, in run
+    return f.result()
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/eventloop/future.py", line 149, in result
+    raise self._exception
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/eventloop/coroutine.py", line 90, in step_next
+    new_f = coroutine.throw(exc)
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 658, in _run_async2
+    result = yield f
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/eventloop/coroutine.py", line 92, in step_next
+    new_f = coroutine.send(f.result())
+  File "/home/nemani/.pyenv/versions/3.7.4/lib/python3.7/site-packages/prompt_toolkit/application/application.py", line 610, in _run_async
+    result = yield From(f)
+KeyboardInterrupt
