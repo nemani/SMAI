@@ -70,9 +70,26 @@ def parse_args(args):
     )
     parser.add_argument(
         "--epochs",
-        required=('train' in sys.argv and 'LSTM' in sys.argv),
+        required=False,
         type=int,
-        help="Number of Epochs to train for",
+        default=50,
+        help="LSTM: Number of Epochs to train for default=50",
+        # action="store_const",
+    )
+    parser.add_argument(
+        "--batch-size",
+        required=False,
+        type=int,
+        default=64,
+        help="LSTM: Batch Size to train with; default=64",
+        # action="store_const",
+    )
+    parser.add_argument(
+        "--earlystop-patience",
+        required=False,
+        type=int,
+        default=5,
+        help="LSTM: Early Stopping Patience; default=64",
         # action="store_const",
     )
     parser.add_argument(
@@ -125,7 +142,7 @@ def main(args):
             data = file.readlines()
 
             if args.type == "LSTM":
-              LM.train(data, epochs=args.epochs)
+              LM.train(data, epochs=args.epochs, BATCH_SIZE=args.batch_size, earlystop_patience=args.earlystop_patience)
             else:
               LM.train(data)
             LM.save_model()
