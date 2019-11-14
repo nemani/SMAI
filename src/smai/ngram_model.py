@@ -25,6 +25,7 @@ class NgramLanguageModel(LanguageModel):
     def __init__(self, mode, slug, base_dir, n=3, use_beam=False, beam_width=10, smoothing_alpha=0.001):
         self.mode = mode
         self.slug = slug
+        self.options_history = []
         self.dir = os.path.join(base_dir, "{}_{}".format('NGram', slug) )
         if not os.path.exists(self.dir):
             os.makedirs(self.dir)
@@ -243,8 +244,14 @@ class NgramLanguageModel(LanguageModel):
         tokens = []
         
         if seed_text:
+            for h1_choices, h1_seed_text in self.options_history[::-1]:
+                h1_toks = h1_seed_text.strip().lower().split(' ')
+                toks = seed_text.strip().lower().split(' ')
+                if toks == h1_toks:
+                    return h1_choices
+            
             eprint("Conditional Generation on: {}".format(seed_text))
-            tokens = seed_text.lower().split(' ')
+            tokens = seed_text.strip().lower().split(' ')
             tokens_size = len(tokens)            
         else:
             eprint("UnConditional Generation")
@@ -269,6 +276,9 @@ class NgramLanguageModel(LanguageModel):
                     break
 
         choices = tokens[tokens_size:]
+
+        self.options_history.append( ( choices, seed_text ))
+        
         eprint(choices)
         return choices
 
